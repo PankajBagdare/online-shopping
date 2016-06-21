@@ -46,10 +46,10 @@ ActiveRecord::Schema.define(version: 20160620133705) do
     t.string   "user_name",  limit: 255
     t.string   "email",      limit: 255
     t.string   "password",   limit: 255
-    t.string   "address",    limit: 255
-    t.integer  "phone",      limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.text     "address",    limit: 65535
+    t.string   "phone",      limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -68,10 +68,10 @@ ActiveRecord::Schema.define(version: 20160620133705) do
     t.integer  "order_item_id",    limit: 4
     t.date     "order_date"
     t.float    "total_price",      limit: 24
-    t.string   "shipping_address", limit: 255
-    t.string   "delivery_address", limit: 255
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.text     "shipping_address", limit: 65535
+    t.text     "delivery_address", limit: 65535
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   add_index "orders", ["customer_id"], name: "fk_rails_3dad120da9", using: :btree
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 20160620133705) do
     t.integer  "customer_id", limit: 4
     t.integer  "order_id",    limit: 4
     t.string   "type",        limit: 255
-    t.float    "amount",      limit: 24
+    t.float    "amounts",     limit: 24
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end

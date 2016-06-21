@@ -6,8 +6,8 @@ class CreateOrders < ActiveRecord::Migration
       t.references :order_item
       t.date :order_date
       t.float :total_price
-      t.string :shipping_address
-      t.string :delivery_address
+      t.text :shipping_address
+      t.text :delivery_address
       t.timestamps null: false
     end
     add_foreign_key :orders, :customers

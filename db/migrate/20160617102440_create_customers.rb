@@ -6,8 +6,8 @@ class CreateCustomers < ActiveRecord::Migration
       t.string :user_name
       t.string :email
       t.string :password
-      t.string :address
-      t.integer :phone
+      t.text :address
+      t.string :phone
       t.timestamps null: false
     end
   end

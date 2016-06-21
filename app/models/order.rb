@@ -8,5 +8,6 @@ class Order < ActiveRecord::Base
 	validates_presence_of :shipping_address, :delivery_address
 	validates :customer_id, confirmation: true
 	validates :order_item_id, confirmation:true
+	validates :total_price, numericality: true
 
 end
